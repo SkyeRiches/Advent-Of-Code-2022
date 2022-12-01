@@ -13,7 +13,8 @@ namespace Day_1_challenge_1
 
         public void RunProgram()
         {
-            string path = "D:\\Advent Code\\Advent Of Code\\Day-1-challenge-1\\input.txt";
+            // Put the input file into the bin folder
+            string path = Directory.GetCurrentDirectory() + "\\input.txt";
             string[] fileLines = System.IO.File.ReadAllLines(path);
 
             int carryAmount = 0;
@@ -36,7 +37,8 @@ namespace Day_1_challenge_1
 
             int total = carrying[carrying.Count - 1] + carrying[carrying.Count - 2] + carrying[carrying.Count - 3];
 
-            Console.WriteLine(total);
+            Console.WriteLine("Highest Carry Amount Is: " + carrying[carrying.Count - 1]);
+            Console.WriteLine("Total Of The Top 3 Carry Amounts Is: " + total);
         }
     }
 }
