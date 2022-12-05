@@ -82,11 +82,17 @@ namespace Day_5
 
         private void CrateMove(int i)
         {
+            char[] removed = new char[amount[i]];
+
+            // loop for amount of times specified in the amount instruction
             for (int j = 0; j < amount[i]; j++)
             {
-                char removed = stacks[start[i] - 1].Pop();
-                int posToPush = end[i] - 1;
-                stacks[posToPush].Push(removed);
+                removed[j] = stacks[start[i] - 1].Pop(); // remove from the starting stack and return
+            }
+
+            for (int j = 0; j < removed.Length; j++)
+            {
+                stacks[end[i] - 1].Push(removed[(removed.Length - 1) - j]); // add to the target stack
             }
         }
 
