@@ -37,11 +37,11 @@ namespace Day_4
             int hiA = int.Parse(valuesA[1]);
             int hiB = int.Parse(valuesB[1]);
 
-            if ((lowA <= lowB && lowB <= hiA) && (lowA <= hiB && hiB <= hiA))
+            if ((lowA <= lowB && lowB <= hiA))
             {
                 overlapped = true;
             }
-            else if ((lowB <= lowA && lowA <= hiB) && (lowB <= hiA && hiA <= hiB))
+            else if ((lowB <= lowA && lowA <= hiB))
             {
                 overlapped = true;
             }
