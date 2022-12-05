@@ -4,7 +4,7 @@ class main
 {
     private static void Main()
     {
-        ClampCleanup clampCleanup = new ClampCleanup();
+        CampCleanup clampCleanup = new CampCleanup();
         clampCleanup.RunProgram();
     }
 }
