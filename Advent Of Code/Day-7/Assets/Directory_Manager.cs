@@ -116,7 +116,7 @@ public class Directory_Manager : MonoBehaviour
 
                 if (split[0] == "dir")
                 {
-                    Debug.Log("Found: " + split[1]);
+                    Debug.Log("Found Dir: " + split[1]);
                 }
                 else
                 {
@@ -125,6 +125,8 @@ public class Directory_Manager : MonoBehaviour
                     {
                         go.localScale = new Vector3(scale, scale, scale);
                     }
+
+                    Debug.Log("Found File: " + split[1]);
                 }
             }
             else
