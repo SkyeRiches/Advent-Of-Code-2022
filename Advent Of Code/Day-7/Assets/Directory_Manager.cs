@@ -94,6 +94,7 @@ public class Directory_Manager : MonoBehaviour
         {
             GameObject go = new GameObject(dirName);
             go.transform.parent = trackingObj.transform;
+            go.AddComponent<NodeValue>();
             trackingObj = go;
 
             Debug.Log("Creating Missing Folder: " + dirName);
@@ -123,7 +124,7 @@ public class Directory_Manager : MonoBehaviour
                     int scale = int.Parse(split[0]);
                     if (go.localScale.x != scale)
                     {
-                        go.localScale = new Vector3(scale, scale, scale);
+                        go.GetComponent<NodeValue>().value = scale;
                     }
 
                     Debug.Log("Found File: " + split[1]);
@@ -131,9 +132,10 @@ public class Directory_Manager : MonoBehaviour
             }
             else
             {
-                Debug.Log("Not Found: " + content);
-                GameObject go = new GameObject(content);
+                Debug.Log("Not Found: " + split[1]);
+                GameObject go = new GameObject(split[1]);
                 go.transform.parent = trackingObj.transform;
+                go.AddComponent<NodeValue>();
             }
         }
     }
